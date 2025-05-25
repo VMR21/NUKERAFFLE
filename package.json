@@ -1,7 +1,7 @@
 {
   "name": "nuke-raffle-api",
   "version": "1.0.0",
-  "main": "raffle.js",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
