@@ -97,7 +97,7 @@ async function fetchAndCacheData() {
       top10.forEach(entry => {
         const username = entry.username;
         const totalWagered = Math.floor(parseFloat(entry.wagered_amount));
-        const count = Math.floor(totalWagered / 500);
+        const count = Math.floor(totalWagered / 200);
         userTicketState[username] = { totalWagered, tickets: count };
         for (let i = 0; i < count; i++) ticketPool.push({ username });
       });
@@ -113,7 +113,7 @@ async function fetchAndCacheData() {
         const username = entry.username;
         const totalWagered = Math.floor(parseFloat(entry.wagered_amount));
         const prevTickets = userTicketState[username]?.tickets || 0;
-        const newTickets = Math.floor(totalWagered / 500) - prevTickets;
+        const newTickets = Math.floor(totalWagered / 200) - prevTickets;
 
         if (!userTicketState[username]) {
           userTicketState[username] = { totalWagered: 0, tickets: 0 };
